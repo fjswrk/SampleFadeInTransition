@@ -1,25 +1,119 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleFadeInTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-n3-s9W">
+                                <rect key="frame" x="110" y="114" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6r8-Lt-ph0"/>
+                                    <constraint firstAttribute="width" constant="100" id="ScW-ql-Fvn"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="food">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JUw-dU-q2X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdp-uo-B6i">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1ak-m3-9aD"/>
+                                    <constraint firstAttribute="width" constant="100" id="edY-ig-Yei"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="hotel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1jh-6T-d5Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvb-IE-ZA9">
+                                <rect key="frame" x="110" y="354" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="EXO-xI-eDc"/>
+                                    <constraint firstAttribute="height" constant="100" id="SbV-ZE-8We"/>
+                                </constraints>
+                                <state key="normal" image="spot">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHO-om-7bh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yvb-IE-ZA9" firstAttribute="top" secondItem="qdp-uo-B6i" secondAttribute="bottom" constant="20" id="FP8-wq-HHi"/>
+                            <constraint firstItem="qdp-uo-B6i" firstAttribute="top" secondItem="DxK-n3-s9W" secondAttribute="bottom" constant="20" id="TyK-A9-8HU"/>
+                            <constraint firstAttribute="centerY" secondItem="qdp-uo-B6i" secondAttribute="centerY" id="b1P-kX-RgT"/>
+                            <constraint firstAttribute="centerX" secondItem="DxK-n3-s9W" secondAttribute="centerX" id="gkH-2H-c6Q"/>
+                            <constraint firstAttribute="centerX" secondItem="qdp-uo-B6i" secondAttribute="centerX" id="kGl-lE-IX3"/>
+                            <constraint firstAttribute="centerX" secondItem="Yvb-IE-ZA9" secondAttribute="centerX" id="nNL-ED-CzG"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bottomBtn" destination="Yvb-IE-ZA9" id="e8g-R3-nzi"/>
+                        <outlet property="centerBtn" destination="qdp-uo-B6i" id="4ae-jr-43f"/>
+                        <outlet property="topBtn" destination="DxK-n3-s9W" id="9sE-JT-HDa"/>
+                        <segue destination="ua9-yc-ghN" kind="presentation" identifier="ShowFullImage" id="XcX-JI-ZiR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="sep-ye-ynf">
+            <objects>
+                <viewController id="ua9-yc-ghN" customClass="DetailViewController" customModule="SampleFadeInTransition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jVH-7V-8wL"/>
+                        <viewControllerLayoutGuide type="bottom" id="edP-Gq-zZl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UKe-ra-cjx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-hR-V2U">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="39Y-hR-V2U" firstAttribute="top" secondItem="UKe-ra-cjx" secondAttribute="top" id="MNh-un-f0p"/>
+                            <constraint firstItem="39Y-hR-V2U" firstAttribute="leading" secondItem="UKe-ra-cjx" secondAttribute="leading" id="OLK-Kr-oRd"/>
+                            <constraint firstAttribute="trailing" secondItem="39Y-hR-V2U" secondAttribute="trailing" id="SAl-Rz-txq"/>
+                            <constraint firstItem="edP-Gq-zZl" firstAttribute="top" secondItem="39Y-hR-V2U" secondAttribute="bottom" id="TYX-E0-d5Y"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="39Y-hR-V2U" id="8cW-wR-GwJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5F-o1-ct1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="327"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="food" width="1088" height="816"/>
+        <image name="hotel" width="1088" height="816"/>
+        <image name="spot" width="1088" height="816"/>
+    </resources>
 </document>
