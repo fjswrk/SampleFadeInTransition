@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
     @IBOutlet weak var topBtn: UIButton!
     @IBOutlet weak var centerBtn: UIButton!
     @IBOutlet weak var bottomBtn: UIButton!
+    
+    // アニメータクラスをプロパティとしてもつ
+    let fadeInAnimator = FadeInAnimator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +39,23 @@ class ViewController: UIViewController {
         if let image = sender as? UIImage{
             let controller = segue.destinationViewController as! DetailViewController
             controller.image = image
+            
+            // 画面遷移するときにカスタムのアニメーションを使うか問い合わせる
+            controller.transitioningDelegate = self
         }
     }
 
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        // アニメータクラスを返すと、画面遷移するときにアニメータクラスを使う。nilだとデフォルトの画面遷移アニメーションとなる
+        return fadeInAnimator
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        // アニメータクラスを返すと、遷移後に画面を閉じたときにアニメータクラスを使う。nilだとデフォルトの画面遷移アニメーションとなる
+        return nil
+    }
+    
 }
 

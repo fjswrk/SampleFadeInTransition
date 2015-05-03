@@ -14,6 +14,7 @@
 		BDF5E8C71AF4C9CB0039711D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF5E8C51AF4C9CB0039711D /* LaunchScreen.xib */; };
 		BDF5E8D31AF4C9CB0039711D /* SampleFadeInTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF5E8D21AF4C9CB0039711D /* SampleFadeInTransitionTests.swift */; };
 		BDF5E8DD1AF4CD520039711D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF5E8DC1AF4CD520039711D /* DetailViewController.swift */; };
+		BDF5E8DF1AF4D1900039711D /* FadeInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF5E8DE1AF4D1900039711D /* FadeInAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		BDF5E8D11AF4C9CB0039711D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF5E8D21AF4C9CB0039711D /* SampleFadeInTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFadeInTransitionTests.swift; sourceTree = "<group>"; };
 		BDF5E8DC1AF4CD520039711D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BDF5E8DE1AF4D1900039711D /* FadeInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				BDF5E8C51AF4C9CB0039711D /* LaunchScreen.xib */,
 				BDF5E8BA1AF4C9CB0039711D /* Supporting Files */,
 				BDF5E8DC1AF4CD520039711D /* DetailViewController.swift */,
+				BDF5E8DE1AF4D1900039711D /* FadeInAnimator.swift */,
 			);
 			path = SampleFadeInTransition;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF5E8DD1AF4CD520039711D /* DetailViewController.swift in Sources */,
+				BDF5E8DF1AF4D1900039711D /* FadeInAnimator.swift in Sources */,
 				BDF5E8BF1AF4C9CB0039711D /* ViewController.swift in Sources */,
 				BDF5E8BD1AF4C9CB0039711D /* AppDelegate.swift in Sources */,
 			);
